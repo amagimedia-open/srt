@@ -5751,11 +5751,13 @@ void CUDT::checkNeedDrop(ref_t<bool> bCongestion)
             {
                 m_iSndCurrSeqNo = minlastack;
             }
+#if 0
             LOGC(dlog.Error, log << "SND-DROPPED " << dpkts << " packets - lost delaying for " << timespan_ms << "ms");
 
             HLOGC(dlog.Debug,
                   log << "drop,now " << CTimer::getTime() << "us," << realack << "-" << m_iSndCurrSeqNo << " seqs,"
                       << dpkts << " pkts," << dbytes << " bytes," << timespan_ms << " ms");
+#endif
         }
         *bCongestion = true;
         CGuard::leaveCS(m_RecvAckLock);
