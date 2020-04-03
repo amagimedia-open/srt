@@ -265,7 +265,7 @@ typedef enum SRT_TRANSTYPE
 // exceed the size that fits in a single MTU.
 
 // This is for MPEG TS and it's a default SRTO_PAYLOADSIZE for SRTT_LIVE.
-static const int SRT_LIVE_DEF_PLSIZE = 1316; // = 188*7, recommended for MPEG TS
+static const int SRT_LIVE_DEF_PLSIZE = 1328; // = 188*7 + 12 bytes for rtp header, recommended for MPEG TS
 
 // This is the maximum payload size for Live mode, should you have a different
 // payload type than MPEG TS.
